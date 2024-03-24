@@ -29,7 +29,7 @@ To use AlphaChanger, follow these steps:
     python app.py
     ```
 
-4. Access the application in your browser at `http://localhost:5000`.
+4. Access the application in your browser at `http://muhammadyorqin.pythonanywhere.com`.
 
 5. Use the provided API endpoint (`/translate`) to convert text programmatically. Send a POST request with JSON data containing the `context` and `pattern` fields to convert text.
 
@@ -56,12 +56,6 @@ Response
     "result": "Converted text"
 }
 ```
-
-### Example
-```bash
-curl -X POST http://muhammadyorqin.pythonanywhere.com/translate -H "Content-Type: application/json" -d '{"context": "Ҳей, ман!", "pattern": "latin"}'
-```
-
 
 ### Contributing
 Contributions are welcome! If you'd like to contribute to AlphaChanger, please follow these steps:
