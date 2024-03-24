@@ -26,21 +26,22 @@ def index():
 def changealph():
     data = request.get_json()
 
-    context = data.get("context", None)
-    pattern = data.get("pattern", None)
+    if not data or "context" not in data or "pattern" not in data:
+        return jsonify({'error': 'Invalid input.'}), 400
 
-    if context == "":
+    context = data["context"]
+    pattern = data["pattern"]
+
+    # returning the context itself if it has only spaces
+    if not context.strip():
         return jsonify({"result": context}), 200
 
-    if not (context and pattern):
-        return jsonify({ 'error': 'Invalid input.' }), 400
+    translated_text = alphachanger(context, pattern)
 
-    result = {
-        "result": alphachanger(context, pattern),
-    }
-    if not result["result"]:
-        return jsonify({ 'error': 'Invalid pattern.' }), 400
-    return jsonify(result), 200
+    if translated_text is False:
+        return jsonify({'error': 'Invalid pattern.'}), 400
+
+    return jsonify({"result": translated_text}), 200
 
 if __name__ == '__main__':
    app.run(debug=False)
