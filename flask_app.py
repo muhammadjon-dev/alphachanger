@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 CORS(app)
 
 lat = {'Ch': 'Ч', 'ch': 'ч', 'Sh': 'Ш', 'sh': 'ш', '\'': 'ъ', 'Yu': 'Ю', 'yu': 'ю', 'Ya': 'Я', 'ya': 'я', 'Oʻ': 'Ў', 'oʻ': 'ў', 'Q': 'Қ', 'q': 'қ', 'Gʻ': 'Ғ', 'gʻ': 'ғ', 'A': 'А', 'a': 'а', 'B': 'Б', 'b': 'б', 'V': 'В', 'v': 'в', 'G': 'Г', 'g': 'г', 'D': 'Д', 'd': 'д', 'E': 'Е', 'e': 'е', 'Yo': 'Ё', 'yo': 'ё', 'J': 'Ж', 'j': 'ж',
@@ -45,7 +46,7 @@ def changealph():
     if translated_text is False:
         return jsonify({'error': 'Invalid pattern.'}), 400
 
-    return jsonify({"result": translated_text}), 200
+    return jsonify({"result": translated_text}), 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 
 if __name__ == '__main__':
