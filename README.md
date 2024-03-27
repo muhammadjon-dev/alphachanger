@@ -1,6 +1,6 @@
 # AlphaChanger
 
-AlphaChanger is a Flask-based web application that allows users to convert text between Latin and Cyrillic alphabets. This can be particularly useful for users who need to transliterate text between these two alphabets.
+AlphaChanger is a FlaskAPI-based application that allows users to convert text between Latin and Cyrillic alphabets. This can be particularly useful for users who need to transliterate text between these two alphabets.
 
 ## Features
 
@@ -26,7 +26,7 @@ To use AlphaChanger, follow these steps:
 3. Run the Flask application:
 
     ```bash
-    python app.py
+    python flask_app.py
     ```
 
 4. Access the application in your browser at `http://muhammadyorqin.pythonanywhere.com`.
@@ -37,7 +37,7 @@ To use AlphaChanger, follow these steps:
 
 ### POST /translate
 
-Convert text between Latin and Cyrillic alphabets.
+Convert text between Uzbek Latin and Uzbek Cyrillic alphabets.
 
 #### Request
 
@@ -58,15 +58,8 @@ Response
 ```
 
 ### Contributing
-Contributions are welcome! If you'd like to contribute to AlphaChanger, please follow these steps:
+Contributions are welcome! 
 
-1. Fork the repository.
-1. Create a new branch (git checkout -b feature/new-feature).
-1. Make your changes.
-1. Commit your changes (git commit -am 'Add new feature').
-1. Push to the branch (git push origin feature/new-feature).
-1. Create a new pull request.
-
-Acknowledgements
+### Acknowledgements
 * [Flask](https://flask.palletsprojects.com/en/3.0.x/api/): The web framework used for building the application.
 * [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/): A Flask extension for handling Cross-Origin Resource Sharing (CORS).
